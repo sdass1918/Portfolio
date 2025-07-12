@@ -757,63 +757,56 @@ const App = () => {
           id="footer"
           className="py-8 px-4 border-t border-border-primary bg-dark-primary/50 backdrop-blur-sm"
         >
-          <div className=" flex justify-between max-w-6xl mx-auto text-center">
-            <div>
-              <p className="text-text-secondary">
-                © 2025 Sudipta Das. Built with ♥️ by me for you!
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="text-text-secondary">
-                <a
-                  href="mailto:sudiptadofficial@gmail.com"
-                  className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-              </p>
-              <p className="text-text-secondary">
-                <a
-                  href="tel:9905612470"
-                  className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Phone className="w-4 h-4" />
-                </a>
-              </p>
-              <p className="text-text-secondary">
-                <a
-                  href="https://www.linkedin.com/in/sudipta-das19/"
-                  className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-              </p>
-              <p className="text-text-secondary">
-                <a
-                  href="https://github.com/sdass1918"
-                  className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-              </p>
-              <p className="text-text-secondary">
-                <a
-                  href="https://x.com/Sudipta1918"
-                  className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-              </p>
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-center gap-6 md:gap-0">
+            <p className="text-text-secondary">
+              © 2025 Sudipta Das. Built with ♥️ by me for you!
+            </p>
+
+            <div className="flex gap-4 flex-wrap justify-center">
+              <a
+                href="mailto:sudiptadofficial@gmail.com"
+                className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+
+              <a
+                href="tel:9905612470"
+                className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/sudipta-das19/"
+                className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://github.com/sdass1918"
+                className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://x.com/Sudipta1918"
+                className="text-text-secondary hover:text-accent-cyan transition-all duration-300 hover:scale-125 transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </footer>
