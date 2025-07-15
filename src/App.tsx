@@ -7,6 +7,7 @@ import {
   Linkedin,
   Mail,
   Phone,
+  Camera,
   MapPin,
   Download,
   ExternalLink,
@@ -158,6 +159,7 @@ const App = () => {
   const experiences = [
     {
       title: "Full Stack Developer",
+      icon: Globe,
       company: "The Right Doctors",
       duration: "June 2025 - Present",
       description:
@@ -172,6 +174,7 @@ const App = () => {
     },
     {
       title: "Content Developer",
+      icon: Camera,
       company: "Eklavya.Me",
       duration: "May 2024 - Jan 2025",
       description:
@@ -182,6 +185,26 @@ const App = () => {
         "Improved student exam readiness by breaking down complex topics into easy-to-understand visual explanations.",
         "Demonstrated consistency and time management by delivering high-quality content on schedule.",
         "Collaborated effectively with the content and technical teams to ensure alignment with curriculum goals and learner needs.",
+      ],
+    },
+    {
+      title: "Technical Team Coordinator",
+      icon: Users,
+      company: "GeeksForGeeks Student Chapter RGIPT",
+      duration: "May 2024 - Present",
+      description:
+        "As a Technical Team Coordinator, I am responsible for managing a team of developers to deliver projects on time and within scope. I use Agile methodologies to improve team collaboration and productivity, and facilitate communication between technical and non-technical stakeholders to ensure alignment on project goals.",
+      technologies: [
+        "Project Management",
+        "Team Coordination",
+        "Agile Methodologies",
+        "Communication",
+      ],
+      achievements: [
+        "Conducted technical events and workshops to enhance the technical skills of students in our college.",
+        "Successfully managed a team of developers and content creators to deliver projects on time and within scope.",
+        "Conducted coding contests and technical quizzes to foster a competitive learning environment in college.",
+        "Facilitated communication between technical and non-technical stakeholders to ensure alignment on project goals.",
       ],
     },
   ];
@@ -468,50 +491,52 @@ const App = () => {
             </div>
 
             <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  onClick={() => setSelectedExperience(exp)}
-                  className="bg-dark-tertiary/50 p-8 rounded-2xl border border-border-primary hover:border-border-secondary transition-all duration-300 backdrop-blur-sm group hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Code className="w-6 h-6 text-dark-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Calendar className="w-4 h-4 text-accent-cyan" />
-                        <p className="text-sm text-text-secondary">
-                          {exp.duration}
-                        </p>
+              {experiences.map((exp, index) => {
+                const Icon = exp.icon;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedExperience(exp)}
+                    className="bg-dark-tertiary/50 p-8 rounded-2xl border border-border-primary hover:border-border-secondary transition-all duration-300 backdrop-blur-sm group hover:scale-105 animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-6 h-6 text-dark-primary" />
                       </div>
-                      <h3 className="text-2xl font-bold text-text-primary mb-2">
-                        {exp.title}
-                      </h3>
-                      <h4 className="text-lg font-semibold text-accent-blue mb-4">
-                        {exp.company}
-                      </h4>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Calendar className="w-4 h-4 text-accent-cyan" />
+                          <p className="text-sm text-text-secondary">
+                            {exp.duration}
+                          </p>
+                        </div>
+                        <h3 className="text-2xl font-bold text-text-primary mb-2">
+                          {exp.title}
+                        </h3>
+                        <h4 className="text-lg font-semibold text-accent-blue mb-4">
+                          {exp.company}
+                        </h4>
+                      </div>
+                    </div>
+
+                    <p className="text-text-secondary mb-6 leading-relaxed">
+                      {exp.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 text-accent-cyan rounded-full text-sm border border-accent-cyan/30 hover:scale-105 transition-transform duration-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  <p className="text-text-secondary mb-6 leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 text-accent-cyan rounded-full text-sm border border-accent-cyan/30 hover:scale-105 transition-transform duration-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
+                );
+              })}
               {selectedExperience.title && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50 transition-opacity animate-fade-in">
                   <div className="bg-dark-primary max-w-lg w-full mx-4 sm:mx-0 rounded-2xl p-6 relative border border-border-primary shadow-xl transform scale-95 animate-scale-in">
