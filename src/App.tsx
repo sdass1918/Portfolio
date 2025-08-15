@@ -161,7 +161,7 @@ const App = () => {
       title: "Full Stack Developer",
       icon: Globe,
       company: "The Right Doctors",
-      duration: "June 2025 - Present",
+      duration: "June 2025 - July 2025",
       description:
         "Full Stack Developer Intern at The Right Doctors, where I optimized APIs, fixed key bugs, and built robust CRUD features across the stack.",
       technologies: ["Angular", "TypeScript", "Node.js", "Express", "MongoDB"],
