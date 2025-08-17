@@ -24,7 +24,10 @@ import {
   CodeSquare,
 } from "lucide-react";
 
+
 const App = () => {
+
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedExperience, setSelectedExperience] = useState<{
     title: string;
@@ -227,6 +230,41 @@ const App = () => {
       featured: false,
     },
     {
+      title: "AI-Powered Insurance Claim Decision System",
+      description:
+        "Built at Bajaj HackRx 6.0, this MERN-based RAG app automates insurance claim approvals with high accuracy using LangChain, Gemini, and Pinecone. Achieved smooth backend performance with precise, reliable outputs.",
+      image: "Quizzite.png",
+      technologies: [
+        "Express.js",
+        "Node.js",
+        "LangChain",
+        "Google Gemini",
+        "Pinecone",
+      ],
+      github: "https://github.com/sdass1918/bajajHackrx",
+      live: "https://bajajhackrx-0i4v.onrender.com",
+      featured: false,
+    },
+    {
+      title: "AI Transcript Summarizer",
+      description:
+      `Built a transcript summarization tool that processes conversations, lectures, and meetings into clear summaries, key
+points, or insights using LLMs with a fine-tuned system prompt. Integrated dummy email delivery with Nodemailer and
+ethereal, deployed a production-ready backend on Render.`,
+      image: "Quizzite.png",
+      technologies: [
+        "Express.js",
+        "Node.js",
+        "Groq",
+        "NLP",
+        "Nodemailer",
+        "Ethereal",
+      ],
+      github: "https://github.com/sdass1918/AI-Summarizer",
+      live: "https://ai-summarizer-frontend-shtm.vercel.app/",
+      featured: false,
+    },
+    {
       title: "Personal Finance Visualizer",
       description:
         "Developed a full-stack finance tracker with categorized expense management, budget monitoring, and data visualization using Next.js, React, shadcn/ui, and Recharts, enabling users to track spending patterns and budget performance.",
@@ -293,7 +331,8 @@ const App = () => {
         {/* Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 relative"
+          className={`min-h-screen flex items-center justify-center px-4 relative transition-all duration-700
+          }`}
         >
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-8 animate-fade-in-up">
@@ -344,7 +383,7 @@ const App = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
               <a
-                href="https://drive.google.com/file/d/1Z23wvciQ_2UtvzTsaQ7DCtZ8XLAKkwtM/view?usp=sharing"
+                href="https://drive.google.com/drive/folders/1rghJO4_FtQlrDMr4p4H9f8XxJY8GnDBN?usp=sharing"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
@@ -477,7 +516,11 @@ const App = () => {
       </section> */}
 
         {/* Experience Section */}
-        <section id="experience" className="py-20 px-4">
+        <section
+          id="experience"
+          className={`py-20 px-4 transition-all duration-700
+          }`}
+        >
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-5xl font-bold mb-6 text-gradient">
@@ -610,7 +653,11 @@ const App = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-20 px-4">
+        <section
+          id="skills"
+          className={`py-20 px-4 transition-all duration-700
+          }`}
+        >
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-5xl font-bold mb-6 text-gradient">
@@ -640,7 +687,7 @@ const App = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 px-4">
+        {/* <section id="projects" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-5xl font-bold mb-6 pb-1 text-gradient">
@@ -701,7 +748,84 @@ const App = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
+
+        <section
+          id="projects"
+          className={`py-20 px-4 transition-all duration-700
+          }`}
+        >
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16 animate-fade-in-up">
+      <h2 className="text-5xl font-bold mb-6 pb-1 text-gradient">
+        Projects
+      </h2>
+      <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto"></div>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {projects.map((project, index) => {
+        const isExpanded = expandedProject === index;
+        return (
+          <div
+            key={index}
+            className="bg-dark-secondary border border-border-primary rounded-xl p-4 hover:scale-[1.02] transition-all duration-300 animate-fade-in-up flex flex-col"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <h3 className="text-lg font-semibold text-accent-cyan mb-2">
+              {project.title}
+            </h3>
+
+            <p className={`text-sm text-text-secondary mb-4 leading-snug ${isExpanded ? "" : "line-clamp-3"}`}>
+              {project.description}
+            </p>
+
+            <button
+              className="text-xs text-accent-cyan underline mb-2 self-start hover:text-accent-purple transition"
+              onClick={() => setExpandedProject(isExpanded ? null : index)}
+            >
+              {isExpanded ? "Show Less" : "See More"}
+            </button>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech, techIndex) => (
+                <span
+                  key={techIndex}
+                  className="text-xs px-2 py-0.5 bg-white/10 text-white rounded-md"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-3 mt-auto">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              )}
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
         {/* Contact Section */}
         {/* <section id="contact" className="py-20 px-4">
