@@ -191,6 +191,27 @@ const App = () => {
       ],
     },
     {
+      title: "Open Source Contributor",
+      icon: Github,
+      company: "Various Organizations on GitHub",
+      duration: "Ongoing",
+      description:
+        "Actively contributed to diverse open-source projects by enhancing features, resolving critical bugs, and improving documentation, while collaborating with a global community through Git and pull requests to adopt software development best practices.",
+      technologies: [
+        "Git",
+        "GitHub",
+        "Open Source",
+        "Documentation",
+        "Code Review",
+      ],
+      achievements: [
+        "Enhanced features and resolved critical bugs across multiple open-source projects.",
+        "Improved project documentation and code quality through comprehensive reviews.",
+        "Collaborated with global development teams using Git workflows and pull requests.",
+        "Adopted and promoted software development best practices within the community.",
+      ],
+    },
+    {
       title: "Technical Team Coordinator",
       icon: Users,
       company: "GeeksForGeeks Student Chapter RGIPT",
@@ -213,6 +234,54 @@ const App = () => {
   ];
 
   const projects = [
+    {
+      title: "ChatAI",
+      description:
+        "Created an AI chat platform that unifies multiple language models (GPT-4o, Deepseek, Gemini) with intelligent conversation management, streaming responses, and OTP-based security through a full-stack TypeScript application.",
+      image: "ChatAI.png",
+      technologies: [
+        "React.js",
+        "Express.js",
+        "Node.js",
+        "Prisma ORM",
+        "PostgreSQL",
+        "JWT",
+      ],
+      github: "https://github.com/sdass1918/ChatAI-Project",
+      live: "https://project-chatai.vercel.app/",
+      featured: false,
+    },
+    {
+      title: "Adept: Chrome Extension AI Helper",
+      description:
+        "Developed for Chrome's built-in AI capabilities, this privacy-first browser extension leverages Chrome's experimental Summarizer, Rewriter, LanguageDetector, and Translator APIs to provide on-device text processing. Features smart context menu integration for instant text simplification, summarization, and translation without external API calls, transforming complex web content into digestible information while maintaining complete user privacy through local processing.",
+      image: "Adept.png",
+      technologies: [
+        "Chrome Extensions",
+        "JavaScript",
+        "Chrome AI Models",
+        "Context Menus",
+      ],
+      github: "https://github.com/sdass1918/on-device-ai-extension",
+      live: "https://youtu.be/1FKCLkK719o?si=xkZ4VlcsZrkTwaOe",
+      featured: false,
+    },
+    {
+      title: "Agentic AI for claim verification",
+      description:
+        "This agentic AI claim verifier leverages the Tavily Search API as a tool for real-time fact-checking. The agent autonomously takes a user's claim, scours the internet for corroborating evidence and counter-arguments, and synthesizes the findings to return a concise, verified response.",
+      image: "AgenticAI.png",
+      technologies: [
+        "Express.js",
+        "Node.js",
+        "React",
+        "Google Gemini API",
+        "Tavily",
+      ],
+      github: "https://github.com/sdass1918/Claim-Verifier-AI-Agent",
+      live: "https://claim-verifier-ai-agent-wcir.vercel.app/",
+      featured: false,
+    },
     {
       title: "Nirvaan - An AI website builder",
       description:
