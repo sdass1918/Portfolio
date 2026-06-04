@@ -22,6 +22,7 @@ import {
   Twitter,
   SunMedium as Medium,
   CodeSquare,
+  Computer,
 } from "lucide-react";
 
 
@@ -161,6 +162,26 @@ const App = () => {
 
   const experiences = [
     {
+      title: "Google Summer of Code 2026 Student",
+      icon: Github,
+      company: "Internet Archive",
+      duration: "May 2026 - Present",
+      description:
+        " Building an AI-assisted Chrome extension for the Wayback Machine using Chrome Prompt API and on- device Gemini Nano.Implemented summarization pipeline with content extraction, service worker, and overlay UI for archived pages.",
+      technologies: ["genAI", "Chrome Extension", "Javascript", "Open Source"],
+      achievements: [],
+    },
+    {
+      title: "Problem setting intern",
+      icon: Computer,
+      company: "AlgoUniversity",
+      duration: "June 2026 - Present",
+      description:
+        " Selected for AlgoUniversity’s Summer 2026 internship program to contribute to AI-powered educational technology initiatives.Working on a chat-first AI Socratic tutor for System Design that guides learners through interactive questioning, structured reasoning, and personalized learning paths rather than providing direct answers.",
+      technologies: ["DSA", "System Design", "TypeScript", "C++"],
+      achievements: [],
+    },
+    {
       title: "Full Stack Developer",
       icon: Globe,
       company: "The Right Doctors",
@@ -188,47 +209,6 @@ const App = () => {
         "Improved student exam readiness by breaking down complex topics into easy-to-understand visual explanations.",
         "Demonstrated consistency and time management by delivering high-quality content on schedule.",
         "Collaborated effectively with the content and technical teams to ensure alignment with curriculum goals and learner needs.",
-      ],
-    },
-    {
-      title: "Open Source Contributor",
-      icon: Github,
-      company: "Various Organizations on GitHub",
-      duration: "Ongoing",
-      description:
-        "Actively contributed to diverse open-source projects by enhancing features, resolving critical bugs, and improving documentation, while collaborating with a global community through Git and pull requests to adopt software development best practices.",
-      technologies: [
-        "Git",
-        "GitHub",
-        "Open Source",
-        "Documentation",
-        "Code Review",
-      ],
-      achievements: [
-        "Enhanced features and resolved critical bugs across multiple open-source projects.",
-        "Improved project documentation and code quality through comprehensive reviews.",
-        "Collaborated with global development teams using Git workflows and pull requests.",
-        "Adopted and promoted software development best practices within the community.",
-      ],
-    },
-    {
-      title: "Technical Team Coordinator",
-      icon: Users,
-      company: "GeeksForGeeks Student Chapter RGIPT",
-      duration: "May 2024 - Present",
-      description:
-        "As a Technical Team Coordinator, I am responsible for managing a team of developers to deliver projects on time and within scope. I use Agile methodologies to improve team collaboration and productivity, and facilitate communication between technical and non-technical stakeholders to ensure alignment on project goals.",
-      technologies: [
-        "Project Management",
-        "Team Coordination",
-        "Agile Methodologies",
-        "Communication",
-      ],
-      achievements: [
-        "Conducted technical events and workshops to enhance the technical skills of students in our college.",
-        "Successfully managed a team of developers and content creators to deliver projects on time and within scope.",
-        "Conducted coding contests and technical quizzes to foster a competitive learning environment in college.",
-        "Facilitated communication between technical and non-technical stakeholders to ensure alignment on project goals.",
       ],
     },
   ];
@@ -409,7 +389,7 @@ ethereal, deployed a production-ready backend on Render.`,
               <div className="mb-8 flex justify-center">
                 <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-border-primary bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 flex items-center justify-center animate-fade-in-up">
                   <img
-                    src="photo1extra.jpg"
+                    src="photo.jpeg"
                     alt="Profile Image"
                     className="w-full h-full object-cover"
                   />
@@ -421,15 +401,18 @@ ethereal, deployed a production-ready backend on Render.`,
                   Hi, I'm Sudipta
                 </h1>
                 <p className="text-lg text-text-secondary mb-6">
-                  20, India | Full Stack Engineer
+                  21, India | Full Stack and DevOps Engineer
                 </p>
               </div>
 
               <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
-                I'm a Full Stack Developer crafting cutting-edge applications
-                and digital solutions. From writing secure code to building
-                intuitive interfaces, I turn complex concepts into user-friendly
-                experiences.
+                I'm a Full Stack & DevOps Engineer crafting cutting-edge
+                applications and robust digital solutions. From building
+                intuitive interfaces and secure serverless backends to
+                architecting scalable infrastructure with AWS, Docker, and
+                Cloudflare, I turn complex concepts into seamless experiences. I
+                ensure reliability through rigorous testing and optimize
+                real-time performance using Kafka, Redis, and Pub/Sub messaging.
               </p>
 
               {/* Status Indicator */}
@@ -824,77 +807,81 @@ ethereal, deployed a production-ready backend on Render.`,
           className={`py-20 px-4 transition-all duration-700
           }`}
         >
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-16 animate-fade-in-up">
-      <h2 className="text-5xl font-bold mb-6 pb-1 text-gradient">
-        Projects
-      </h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto"></div>
-    </div>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {projects.map((project, index) => {
-        const isExpanded = expandedProject === index;
-        return (
-          <div
-            key={index}
-            className="bg-dark-secondary border border-border-primary rounded-xl p-4 hover:scale-[1.02] transition-all duration-300 animate-fade-in-up flex flex-col"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <h3 className="text-lg font-semibold text-accent-cyan mb-2">
-              {project.title}
-            </h3>
-
-            <p className={`text-sm text-text-secondary mb-4 leading-snug ${isExpanded ? "" : "line-clamp-3"}`}>
-              {project.description}
-            </p>
-
-            <button
-              className="text-xs text-accent-cyan underline mb-2 self-start hover:text-accent-purple transition"
-              onClick={() => setExpandedProject(isExpanded ? null : index)}
-            >
-              {isExpanded ? "Show Less" : "See More"}
-            </button>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.technologies.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="text-xs px-2 py-0.5 bg-white/10 text-white rounded-md"
-                >
-                  {tech}
-                </span>
-              ))}
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h2 className="text-5xl font-bold mb-6 pb-1 text-gradient">
+                Projects
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto"></div>
             </div>
 
-            <div className="flex gap-3 mt-auto">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-              )}
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {projects.map((project, index) => {
+                const isExpanded = expandedProject === index;
+                return (
+                  <div
+                    key={index}
+                    className="bg-dark-secondary border border-border-primary rounded-xl p-4 hover:scale-[1.02] transition-all duration-300 animate-fade-in-up flex flex-col"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <h3 className="text-lg font-semibold text-accent-cyan mb-2">
+                      {project.title}
+                    </h3>
+
+                    <p
+                      className={`text-sm text-text-secondary mb-4 leading-snug ${isExpanded ? "" : "line-clamp-3"}`}
+                    >
+                      {project.description}
+                    </p>
+
+                    <button
+                      className="text-xs text-accent-cyan underline mb-2 self-start hover:text-accent-purple transition"
+                      onClick={() =>
+                        setExpandedProject(isExpanded ? null : index)
+                      }
+                    >
+                      {isExpanded ? "Show Less" : "See More"}
+                    </button>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs px-2 py-0.5 bg-white/10 text-white rounded-md"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3 mt-auto">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
+                        >
+                          <Github className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </section>
 
         {/* Contact Section */}
         {/* <section id="contact" className="py-20 px-4">
