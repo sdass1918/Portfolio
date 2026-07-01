@@ -243,6 +243,7 @@ const App = () => {
 
   const nav = [
     { id: "home", label: "_home" },
+    { id: "github-stats", label: "_github" },
     { id: "experience", label: "_experience" },
     { id: "skills", label: "_skills" },
     { id: "projects", label: "_projects" },
