@@ -398,9 +398,17 @@ const App = () => {
 
   const blogs = [
     {
+      title:
+        "I Thought Gemini Was Hallucinating. It Was Actually Remembering Everything.",
+      desc: "How a Chrome extension, an on-device LLM, and one innocent design decision led to one of the most interesting debugging sessions I’ve had.",
+      date: "June 2026",
+      link: "https://medium.com/@sd1216826/i-thought-gemini-was-hallucinating-it-was-actually-remembering-everything-af5aabee89cf?sharedUserId=sd1216826",
+      tags: ["Debugging", "Google Summer of Code", "Artificial Intelligence", "Javascript"]
+    },
+    {
       title: "GSoC 2026: From Almost Giving Up to Getting Selected",
       desc: "I got into GSoC 2026. And honestly, I still can’t believe it.",
-      date: "Jun 2026",
+      date: "June 2026",
       link: "https://medium.com/@sd1216826/gsoc-2026-from-almost-giving-up-to-getting-selected-3791ab6ea587",
       tags: ["GSoC", "Open Source"],
     },
