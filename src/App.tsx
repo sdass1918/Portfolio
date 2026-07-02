@@ -660,34 +660,23 @@ const App = () => {
                   <img
                     src="https://ghchart.rshah.org/sdass1918"
                     alt="GitHub Contributions"
-                    className="w-full opacity-90"
+                    className="w-full opacity-90 mix-blend-screen"
                     style={{
+                      /* Grayscale first, invert for dark mode, then gentle adjustments so we don't crush the mid-tones */
                       filter:
-                        "grayscale(100%) brightness(1.5) contrast(1.5) invert(1) hue-rotate(180deg)",
+                        "grayscale(100%) invert(1) brightness(1.8) contrast(1.2)",
                     }}
                   />
-                  <div className="flex justify-between items-center mt-4 text-[10px] text-tertiary">
+                  <div className="flex justify-end items-center mt-4 text-[10px] text-tertiary gap-2">
                     <span>Less active</span>
                     <div className="flex items-center gap-1">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-[#161b22]"></div>
-                      <div
-                        className="w-2.5 h-2.5 rounded-sm bg-[#0e4429]"
-                        style={{ filter: "grayscale(100%) brightness(1.5)" }}
-                      ></div>
-                      <div
-                        className="w-2.5 h-2.5 rounded-sm bg-[#006d32]"
-                        style={{ filter: "grayscale(100%) brightness(1.8)" }}
-                      ></div>
-                      <div
-                        className="w-2.5 h-2.5 rounded-sm bg-[#26a641]"
-                        style={{ filter: "grayscale(100%) brightness(2.2)" }}
-                      ></div>
-                      <div
-                        className="w-2.5 h-2.5 rounded-sm bg-[#39d353]"
-                        style={{ filter: "grayscale(100%) brightness(2.8)" }}
-                      ></div>
-                      <span className="ml-1">More active</span>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-[#161b22] border border-white/5"></div>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-white/20"></div>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-white/40"></div>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-white/60"></div>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-white/90"></div>
                     </div>
+                    <span>More active</span>
                   </div>
                 </div>
               </div>
@@ -922,7 +911,10 @@ const App = () => {
                           key={j}
                           className="text-[11px] text-secondary flex gap-2"
                         >
-                          <span className="text-tertiary whitespace-nowrap">-&gt;</span> {a}
+                          <span className="text-tertiary whitespace-nowrap">
+                            -&gt;
+                          </span>{" "}
+                          {a}
                         </li>
                       ))}
                     </ul>
