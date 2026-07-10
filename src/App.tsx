@@ -529,9 +529,9 @@ const App = () => {
           <div className="banner">
             <div className="banner-grid" />
             <img
-              src="CoverImage.jpeg"
+              src="CoverImage2.jpeg"
               alt="Cover"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-40 grayscale"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
             />
             {/* The fix: A gradient that goes from transparent to exact bg-primary */}
             <div
@@ -569,15 +569,15 @@ const App = () => {
               <div className="text-xs text-tertiary max-w-xl mx-auto mb-8 leading-relaxed px-4 flex flex-col gap-1.5 text-left md:text-center">
                 <div className="flex items-center md:justify-center gap-2 mb-1">
                   <span className="text-secondary">&gt;</span>
-                  <span className="text-primary font-mono tracking-wider uppercase text-[10px]">
+                  <span className="font-extrabold text-primary font-mono tracking-wider uppercase text-[10px]">
                     Engineer &middot; Open Source &middot; AI
                   </span>
                 </div>
-                <p>
+                <p className="font-extrabold text-white">
                   I build full-stack applications, developer tools, and AI
                   products.
                 </p>
-                <p className="opacity-80">
+                <p className="opacity-80 font-extrabold text-white">
                   Currently contributing to{" "}
                   <span className="text-secondary">Google Summer of Code</span>{" "}
                   and building the next thing I'm curious about.
@@ -589,8 +589,7 @@ const App = () => {
                   onClick={() => scrollTo("projects")}
                   className="bg-white/5 hover:bg-white/10 text-primary px-6 py-3 rounded-sm text-xs font-medium transition-all border border-border-primary hover:border-secondary flex items-center gap-2"
                 >
-                  <Sparkles className="w-3.5 h-3.5" />
-                  view work
+                  View work
                 </button>
                 <a
                   href="https://drive.google.com/drive/folders/1rghJO4_FtQlrDMr4p4H9f8XxJY8GnDBN?usp=sharing"
@@ -599,7 +598,7 @@ const App = () => {
                   className="text-tertiary hover:text-primary px-6 py-3 rounded-sm text-xs font-medium transition-all border border-border-primary hover:border-secondary flex items-center gap-2"
                 >
                   <Download className="w-3.5 h-3.5" />
-                  resume
+                  Resume
                 </a>
               </div>
 
